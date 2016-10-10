@@ -23,5 +23,8 @@
     "useref": "^1.2.0",
     "wiredep": "^4.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1"
+  }
 }

@@ -1,5 +1,147 @@
 {% extends "layouts/app.twig" %}
 
 {% block content %}
-    this is index page content
+    <section class="banner-b">
+        <div class="content-limiter">
+            <div class="banner-b__bg"></div>
+            <div class="banner-b__content">
+                <p class="p-banner-b-print mb-15">Welcome to the</p>
+                <h1 class="h1-content mb-15">Tanaka Restaurant</h1>
+                <p class="p-banner-b-capital mb-15">The best Japanese cuisine restaurant in Washington, DC<br>
+                    Book online or call (555)123-4567</p>
+                <div class="btn-wrap">
+                    <a class="btn btn-red" href="#">Book online</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="panel">
+        <ul class="panel__list">
+            <li class="panel__item">
+                <div class="pannel__ico-wrap"><img class="pannel_ico" src="img/winner.png"></div>
+                <div class="pannel__info-box">
+                    <h4 class="h4-panel">Open Table Dinners</h4>
+                    <div class="stars-b">
+                        <img class="stars-b__img" src="img/stars-3.png">
+                    </div>
+                    <p class="text-light-gray">2016</p>
+                </div>
+            </li>
+            <li class="panel__item">
+                <div class="pannel__ico-wrap"><img class="pannel_ico" src="img/yelp.png"></div>
+                <div class="pannel__info-box">
+                    <h4 class="h4-panel">People love us on Yelp</h4>
+                    <div class="stars-b">
+                        <img class="stars-b__img" src="img/stars-3.png">
+                    </div>
+                    <p class="text-light-gray">2016</p>
+                </div>
+            </li>
+            <li class="panel__item">
+                <div class="pannel__ico-wrap"><img class="pannel_ico" src="img/michelin.png"></div>
+                <div class="pannel__info-box">
+                    <h4 class="h4-panel">Guide Michelin</h4>
+                    <div class="stars-b">
+                        <img class="stars-b__img" src="img/stars-3.png">
+                    </div>
+                    <p class="text-light-gray">2015</p>
+                </div>
+            </li>
+            <li class="panel__item">
+                <div class="pannel__ico-wrap"><img class="pannel_ico" src="img/tripadvisor.png"></div>
+                <div class="pannel__info-box">
+                    <h4 class="h4-panel">Travelers' Choice</h4>
+                    <div class="stars-b">
+                        <img class="stars-b__img" src="img/stars-3.png">
+                    </div>
+                    <p class="text-light-gray">2015</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="showcase-b">
+        <ul class="showcase-b__list">
+            <li class="showcase-b__item">
+                <a class="showcase-b__link showcase-b__link-bg-1">
+                    <span class="relative">Dinners</span>
+                </a>
+            </li>
+            <li class="showcase-b__item">
+                <a class="showcase-b__link showcase-b__link-bg-2">
+                    <span class="relative">Lunches</span>
+                </a>
+            </li>
+            <li class="showcase-b__item">
+                <a class="showcase-b__link showcase-b__link-bg-3">
+                    <span class="relative">Desserts</span>
+                </a>
+            </li>
+            <li class="showcase-b__item">
+                <a class="showcase-b__link showcase-b__link-bg-4">
+                    <span class="relative">Drinks</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="comments-b">
+        <div class="content-limiter">
+            <div class="text-center mb-40">
+                <h2 class="h2-content mb-15">What people are saying about our restaurant</h2>
+                <p class="p-content">Anyone, who visits our place leaves us well fed and in a great mood!</p>
+            </div>
+            <ul class="comments-b__list">
+                <li class="comments-b__item">
+                    <p class="p-content quotes mb-25">The sushi rolls that they serve here are just amazing and taste just like the ones served at the best Japanese restaurants in Tokyo! Believe me, I’ve lived there for more than 30 years!</p>
+                    <div class="comments-b__author-b">
+                        <div class="comments-b__avatar-wrap">
+                            <img class="comments-b__avatar" src="img/sam.jpg">
+                        </div>
+                        <div class="comments-b__author-name">
+                            <h5 class="h5-content">Sam</h5>
+                            <p class="p-content">posted on, TripAdvisor</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="comments-b__item">
+                    <p class="p-content quotes mb-25">The sushi rolls that they serve here are just amazing and taste just like the ones served at the best Japanese restaurants in Tokyo! Believe me, I’ve lived there for more than 30 years!</p>
+                    <div class="comments-b__author-b clearfix">
+                        <div class="comments-b__avatar-wrap">
+                            <img class="comments-b__avatar" src="img/leah.jpg">
+                        </div>
+                        <div class="comments-b__author-name">
+                            <h5 class="h5-content">Leah</h5>
+                            <p class="p-content">posted on, TripAdvisor</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="comments-b__item">
+                    <p class="p-content quotes mb-25">The sushi rolls that they serve here are just amazing and taste just like the ones served at the best Japanese restaurants in Tokyo! Believe me, I’ve lived there for more than 30 years!</p>
+                    <div class="comments-b__author-b clearfix">
+                        <div class="comments-b__avatar-wrap">
+                            <img class="comments-b__avatar" src="img/alfred.jpg">
+                        </div>
+                        <div class="comments-b__author-name">
+                            <h5 class="h5-content">Alfred</h5>
+                            <p class="p-content">posted on, TripAdvisor</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="catalog-b">
+        <div class="content-limiter">
+            <h2 class="h2-content">Chef Recommends</h2>
+            <p class="p-content text-center">Choose a perfect combination of main dish and wine, thanks to our Chef’s specials</p>
+        </div>
+        <div class="catalog-b__list-wrap">
+            <ul class="catalog-b__list">
+                <li class="catalog-b__item">
+                    <a class="catalog-b__link-img" href="#"><img class="catalog-b__img" src="img/product-1.jpg"></a>
+                    <a class="catalog-b__link-text" href="#">Tuna / Maguro Sushi</a><span>$14.49</span>
+                    <p class="catalog-b__text">200g of Black Angus steak, french fries, Coleslav salad, beer</p>
+                </li>
+            </ul>
+        </div>
+    </section>
 {% endblock %}
