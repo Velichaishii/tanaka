@@ -5,6 +5,6 @@
   "author": "Yuriy Bogatyrenko",
   "dependencies": {
     "uikit": "^2.27.1",
-    "font-awesome": "^4.6.3"
+    "font-awesome": "fontawesome#^4.6.3"
   }
 }

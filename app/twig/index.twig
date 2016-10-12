@@ -2,15 +2,15 @@
 
 {% block content %}
     <section class="banner-b">
+        <div class="banner-b__bg"></div>
         <div class="content-limiter">
-            <div class="banner-b__bg"></div>
             <div class="banner-b__content">
-                <p class="p-banner-b-print mb-15">Welcome to the</p>
+                <p class="text-handwritten text-handwritten_white mb-15">Welcome to the</p>
                 <h1 class="h1-content mb-15">Tanaka Restaurant</h1>
                 <p class="p-banner-b-capital mb-15">The best Japanese cuisine restaurant in Washington, DC<br>
                     Book online or call (555)123-4567</p>
                 <div class="btn-wrap">
-                    <a class="btn btn-red" href="#">Book online</a>
+                    <a class="btn btn_red" href="#">Book online</a>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
             <li class="panel__item">
                 <div class="pannel__ico-wrap"><img class="pannel_ico" src="img/winner.png"></div>
                 <div class="pannel__info-box">
-                    <h4 class="h4-panel">Open Table Dinners</h4>
+                    <h5 class="h5-panel">Open Table Dinners</h5>
                     <div class="stars-b">
                         <img class="stars-b__img" src="img/stars-3.png">
                     </div>
@@ -30,9 +30,9 @@
             <li class="panel__item">
                 <div class="pannel__ico-wrap"><img class="pannel_ico" src="img/yelp.png"></div>
                 <div class="pannel__info-box">
-                    <h4 class="h4-panel">People love us on Yelp</h4>
+                    <h5 class="h5-panel">People love us on Yelp</h5>
                     <div class="stars-b">
-                        <img class="stars-b__img" src="img/stars-3.png">
+                        <img class="stars-b__img" src="img/stars-4.png">
                     </div>
                     <p class="text-light-gray">2016</p>
                 </div>
@@ -40,7 +40,7 @@
             <li class="panel__item">
                 <div class="pannel__ico-wrap"><img class="pannel_ico" src="img/michelin.png"></div>
                 <div class="pannel__info-box">
-                    <h4 class="h4-panel">Guide Michelin</h4>
+                    <h5 class="h5-panel">Guide Michelin</h5>
                     <div class="stars-b">
                         <img class="stars-b__img" src="img/stars-3.png">
                     </div>
@@ -50,9 +50,9 @@
             <li class="panel__item">
                 <div class="pannel__ico-wrap"><img class="pannel_ico" src="img/tripadvisor.png"></div>
                 <div class="pannel__info-box">
-                    <h4 class="h4-panel">Travelers' Choice</h4>
+                    <h5 class="h5-panel">Travelers' Choice</h5>
                     <div class="stars-b">
-                        <img class="stars-b__img" src="img/stars-3.png">
+                        <img class="stars-b__img" src="img/stars-4.png">
                     </div>
                     <p class="text-light-gray">2015</p>
                 </div>
@@ -62,23 +62,24 @@
     <section class="showcase-b">
         <ul class="showcase-b__list">
             <li class="showcase-b__item">
-                <a class="showcase-b__link showcase-b__link-bg-1">
-                    <span class="relative">Dinners</span>
+                <a class="showcase-b__link showcase-b__link_bg-1" href="#">
+                    <div class="showcase-b__link-fg"></div>
+                    <h3 class="h3-content">Dinners</h3>
                 </a>
             </li>
             <li class="showcase-b__item">
-                <a class="showcase-b__link showcase-b__link-bg-2">
-                    <span class="relative">Lunches</span>
+                <a class="showcase-b__link showcase-b__link_bg-2" href="#">
+                    <h3 class="h3-content">Lunches</h3>
                 </a>
             </li>
             <li class="showcase-b__item">
-                <a class="showcase-b__link showcase-b__link-bg-3">
-                    <span class="relative">Desserts</span>
+                <a class="showcase-b__link showcase-b__link_bg-3" href="#">
+                    <h3 class="h3-content">Desserts</h3>
                 </a>
             </li>
             <li class="showcase-b__item">
-                <a class="showcase-b__link showcase-b__link-bg-4">
-                    <span class="relative">Drinks</span>
+                <a class="showcase-b__link showcase-b__link_bg-4" href="#">
+                    <h3 class="h3-content">Drinks</h3>
                 </a>
             </li>
         </ul>
@@ -131,17 +132,220 @@
     </section>
     <section class="catalog-b">
         <div class="content-limiter">
-            <h2 class="h2-content">Chef Recommends</h2>
-            <p class="p-content text-center">Choose a perfect combination of main dish and wine, thanks to our Chef’s specials</p>
+            <h2 class="h2-content text-center mb-10">Chef Recommends</h2>
+            <p class="p-content text-center text-gray">Choose a perfect combination of main dish and wine, thanks to our Chef’s specials</p>
         </div>
         <div class="catalog-b__list-wrap">
             <ul class="catalog-b__list">
                 <li class="catalog-b__item">
-                    <a class="catalog-b__link-img" href="#"><img class="catalog-b__img" src="img/product-1.jpg"></a>
-                    <a class="catalog-b__link-text" href="#">Tuna / Maguro Sushi</a><span>$14.49</span>
-                    <p class="catalog-b__text">200g of Black Angus steak, french fries, Coleslav salad, beer</p>
+                    <a class="catalog-b__link-img" href="#">
+                        <img class="catalog-b__img" src="img/product-1.jpg">
+                        <span class="btn btn_red-small">Chef's special</span>
+                    </a>
+                    <div class="catalog-b__text-box">
+                        <div class="catalog-b__table">
+                            <div class="catalog-b__column-side">
+                                <a class="catalog-b__link-text" href="#">
+                                    <h4 class="h4-content">Tuna / Maguro Sushi</h4>
+                                </a>
+                            </div>
+                            <div class="catalog-b__column-middle">
+                                <div class="dots"></div>
+                            </div>
+                            <div class="catalog-b__column-side catalog-b__price text-red">
+                                $14.49
+                            </div>
+                        </div>
+                        <p class="catalog-b__text text-light-gray">200g of Black Angus steak, french fries, Coleslav salad, beer</p>
+                    </div>
+                </li>
+                <li class="catalog-b__item">
+                    <a class="catalog-b__link-img" href="#">
+                        <img class="catalog-b__img" src="img/product-2.jpg">
+                        <span class="btn btn_red-small">Chef's special</span>
+                    </a>
+                    <div class="catalog-b__text-box">
+                        <div class="catalog-b__table">
+                            <div class="catalog-b__column-side">
+                                <a class="catalog-b__link-text" href="#">
+                                    <h4 class="h4-content">Tuna / Maguro Sushi</h4>
+                                </a>
+                            </div>
+                            <div class="catalog-b__column-middle">
+                                <div class="dots"></div>
+                            </div>
+                            <div class="catalog-b__column-side catalog-b__price text-red">
+                                $14.49
+                            </div>
+                        </div>
+                        <p class="catalog-b__text text-light-gray">200g of Black Angus steak, french fries, Coleslav salad, beer</p>
+                    </div>
+                </li>
+                <li class="catalog-b__item">
+                    <a class="catalog-b__link-img" href="#">
+                        <img class="catalog-b__img" src="img/product-3.jpg">
+                        <span class="btn btn_red-small">Chef's special</span>
+                    </a>
+                    <div class="catalog-b__text-box">
+                        <div class="catalog-b__table">
+                            <div class="catalog-b__column-side">
+                                <a class="catalog-b__link-text" href="#">
+                                    <h4 class="h4-content">Tuna / Maguro Sushi</h4>
+                                </a>
+                            </div>
+                            <div class="catalog-b__column-middle">
+                                <div class="dots"></div>
+                            </div>
+                            <div class="catalog-b__column-side catalog-b__price text-red">
+                                $14.49
+                            </div>
+                        </div>
+                        <p class="catalog-b__text text-light-gray">200g of Black Angus steak, french fries, Coleslav salad, beer</p>
+                    </div>
+                </li>
+                <li class="catalog-b__item">
+                    <a class="catalog-b__link-img" href="#">
+                        <img class="catalog-b__img" src="img/product-4.jpg">
+                        <span class="btn btn_red-small">Chef's special</span>
+                    </a>
+                    <div class="catalog-b__text-box">
+                        <div class="catalog-b__table">
+                            <div class="catalog-b__column-side">
+                                <a class="catalog-b__link-text" href="#">
+                                    <h4 class="h4-content">Tuna / Maguro Sushi</h4>
+                                </a>
+                            </div>
+                            <div class="catalog-b__column-middle">
+                                <div class="dots"></div>
+                            </div>
+                            <div class="catalog-b__column-side catalog-b__price text-red">
+                                $14.49
+                            </div>
+                        </div>
+                        <p class="catalog-b__text text-light-gray">200g of Black Angus steak, french fries, Coleslav salad, beer</p>
+                    </div>
+                </li>
+                <li class="catalog-b__item">
+                    <a class="catalog-b__link-img" href="#">
+                        <img class="catalog-b__img" src="img/product-5.jpg">
+                        <span class="btn btn_red-small">Chef's special</span>
+                    </a>
+                    <div class="catalog-b__text-box">
+                        <div class="catalog-b__table">
+                            <div class="catalog-b__column-side">
+                                <a class="catalog-b__link-text" href="#">
+                                    <h4 class="h4-content">Tuna / Maguro Sushi</h4>
+                                </a>
+                            </div>
+                            <div class="catalog-b__column-middle">
+                                <div class="dots"></div>
+                            </div>
+                            <div class="catalog-b__column-side catalog-b__price text-red">
+                                $14.49
+                            </div>
+                        </div>
+                        <p class="catalog-b__text text-light-gray">200g of Black Angus steak, french fries, Coleslav salad, beer</p>
+                    </div>
+                </li>
+                <li class="catalog-b__item">
+                    <a class="catalog-b__link-img" href="#">
+                        <img class="catalog-b__img" src="img/product-6.jpg">
+                        <span class="btn btn_red-small">Chef's special</span>
+                    </a>
+                    <div class="catalog-b__text-box">
+                        <div class="catalog-b__table">
+                            <div class="catalog-b__column-side">
+                                <a class="catalog-b__link-text" href="#">
+                                    <h4 class="h4-content">Tuna / Maguro Sushi</h4>
+                                </a>
+                            </div>
+                            <div class="catalog-b__column-middle">
+                                <div class="dots"></div>
+                            </div>
+                            <div class="catalog-b__column-side catalog-b__price text-red">
+                                $14.49
+                            </div>
+                        </div>
+                        <p class="catalog-b__text text-light-gray">200g of Black Angus steak, french fries, Coleslav salad, beer</p>
+                    </div>
+                </li>
+                <li class="catalog-b__item">
+                    <a class="catalog-b__link-img" href="#">
+                        <img class="catalog-b__img" src="img/product-7.jpg">
+                        <span class="btn btn_red-small">Chef's special</span>
+                    </a>
+                    <div class="catalog-b__text-box">
+                        <div class="catalog-b__table">
+                            <div class="catalog-b__column-side">
+                                <a class="catalog-b__link-text" href="#">
+                                    <h4 class="h4-content">Tuna / Maguro Sushi</h4>
+                                </a>
+                            </div>
+                            <div class="catalog-b__column-middle">
+                                <div class="dots"></div>
+                            </div>
+                            <div class="catalog-b__column-side catalog-b__price text-red">
+                                $14.49
+                            </div>
+                        </div>
+                        <p class="catalog-b__text text-light-gray">200g of Black Angus steak, french fries, Coleslav salad, beer</p>
+                    </div>
+                </li>
+                <li class="catalog-b__item">
+                    <a class="catalog-b__link-img" href="#">
+                        <img class="catalog-b__img" src="img/product-8.jpg">
+                        <span class="btn btn_red-small">Chef's special</span>
+                    </a>
+                    <div class="catalog-b__text-box">
+                        <div class="catalog-b__table">
+                            <div class="catalog-b__column-side">
+                                <a class="catalog-b__link-text" href="#">
+                                    <h4 class="h4-content">Tuna / Maguro Sushi</h4>
+                                </a>
+                            </div>
+                            <div class="catalog-b__column-middle">
+                                <div class="dots"></div>
+                            </div>
+                            <div class="catalog-b__column-side catalog-b__price">
+                                $14.49
+                            </div>
+                        </div>
+                        <p class="catalog-b__text text-light-gray">200g of Black Angus steak, french fries, Coleslav salad, beer</p>
+                    </div>
                 </li>
             </ul>
         </div>
+    </section>
+    <section class="chef-b">
+        <div class="content-limiter">
+            <div class="chef-b__container">
+                <div class="chef-b__left-b">
+                    <img class="chef-b__img" src="img/chef.jpg">
+                </div>
+                <div class="chef-b__right-b">
+                    <p class="text-handwritten text-handwritten_red mb-10">Looking for a gourmet experience?</p>
+                    <h2 class="h2-content mb-40">Meet the Tanaka’s Main Chef</h2>
+                    <p class="p-content mb-25">With all this sushi frenzy, people who like the Japanese food are missing out on a whole other world of delicious traditional Japanese dishes! The team that works at our kitchen will cook you a lot of new and classic meals!</p>
+                    <p class="text-handwritten-gray-rotate text-gray">Mr. Simon Wicked</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="interior-b">
+        <div class="content-limiter">
+            <div class="interior-b__content text-white text-center">
+                <p class="text-handwritten text-handwritten_red mb-15">Do you value relaxing, friendly atmosphere?</p>
+                <h2 class="h2-content mb-40">Our interior will sway your mood!</h2>
+                <p class="mb-40">The Tanaka restaurant offers a cozy, home-like atmosphere to help you enjoy your dinner and have a peace of mind… We assembled a strong team of professionals, all of whom aspire to constantly excel and step up!</p>
+                <div>
+                    <a class="btn btn_red-transparent" href="#">
+                        Gallery
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="map">
+        
     </section>
 {% endblock %}
