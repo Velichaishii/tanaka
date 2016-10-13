@@ -90,6 +90,8 @@ body
 
 .menu
 	color: #fff
+	position: relative
+	z-index: 10
 
 .menu__list-first-level
 	text-align: center
@@ -97,17 +99,20 @@ body
 .menu__item-first-level
 	margin-right: 40px
 	display: inline-block
-	+trans()
+	position: relative
 
-	&:hover
+	&:hover .menu__link_first-level
 		color: #e1002f
 
 	&:hover .arrow-down:before
-		border-right: 2px solid #e1002f
-		border-bottom: 2px solid #e1002f
+		border-color: #e1002f
+
+	&:hover .menu__list-second-level
+		display: inline-block
 
 .menu__link
 	position: relative
+	+trans()
 
 .arrow-down
 	padding-right: 15px
@@ -128,6 +133,23 @@ body
 	position: relative
 	text-transform: uppercase
 	font-size: 14px
+
+.menu__list-second-level
+	min-width: 240px
+	background: #2d2d32
+	display: none
+	position: absolute
+	top: 100%
+	left: 0
+	text-align: left
+	font-size: 14px
+
+.menu__link_second-level
+	padding: 15px 30px
+	display: block
+
+	&:hover
+		color: #e1002f
 
 .banner-b
 	width: 100%

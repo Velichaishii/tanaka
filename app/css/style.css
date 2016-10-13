@@ -198,6 +198,8 @@ body {
 
 .menu {
   color: #fff;
+  position: relative;
+  z-index: 10;
 }
 
 .menu__list-first-level {
@@ -207,21 +209,24 @@ body {
 .menu__item-first-level {
   margin-right: 40px;
   display: inline-block;
-  -webkit-transition: all 0.5s ease 0s;
-  -moz-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+  position: relative;
 }
-.menu__item-first-level:hover {
+.menu__item-first-level:hover .menu__link_first-level {
   color: #e1002f;
 }
 .menu__item-first-level:hover .arrow-down:before {
-  border-right: 2px solid #e1002f;
-  border-bottom: 2px solid #e1002f;
+  border-color: #e1002f;
+}
+.menu__item-first-level:hover .menu__list-second-level {
+  display: inline-block;
 }
 
 .menu__link {
   position: relative;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 
 .arrow-down {
@@ -253,6 +258,25 @@ body {
   position: relative;
   text-transform: uppercase;
   font-size: 14px;
+}
+
+.menu__list-second-level {
+  min-width: 240px;
+  background: #2d2d32;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.menu__link_second-level {
+  padding: 15px 30px;
+  display: block;
+}
+.menu__link_second-level:hover {
+  color: #e1002f;
 }
 
 .banner-b {
