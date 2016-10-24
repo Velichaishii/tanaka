@@ -10,19 +10,28 @@
     {% include "stylesheets.twig" %}
 </head>
 <body>
-    <!-- Header block -->
-    {% include "header.twig" %}
-    <!-- Header block end -->
+    <div class="site-container">
+        <div class="burger-menu-wrap popup">
+            {% include "hamb-menu.twig" %}
+        </div>
+        <div class="site-wrap">
+            <div class="site-wrap-overlay"></div>
 
-    <!-- Block content -->
-    {% block content %}{% endblock %}
-    <!-- Block content end -->
+            <!-- Header block -->
+            {% include "header.twig" %}
+            <!-- Header block end -->
 
-    <!-- Footer block -->
-    {% include "footer.twig" %}
-    <!-- Footer block end -->
+            <!-- Block content -->
+            {% block content %}{% endblock %}
+            <!-- Block content end -->
 
-    <!-- Scripts -->
-    {% include "scripts.twig" %}
+            <!-- Footer block -->
+            {% include "footer.twig" %}
+            <!-- Footer block end -->
+
+            <!-- Scripts -->
+            {% include "scripts.twig" %}
+        </div>
+    </div>
 </body>
 </html>
