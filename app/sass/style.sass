@@ -12,6 +12,7 @@ body
 	top: 0
 	left: -320px
 	z-index: 10
+	overflow-x: scroll
 	+trans()
 
 	&.visible
@@ -21,18 +22,39 @@ body
 	width: 100%
 	display: block
 	color: #fff
-	font-size: 18px
+
+	&_second-level
+		display: none
+
+.burger-menu__row
+	font-size: 0
+
+	&:hover, &:active, &:focus
+		background: #2d2d32
 
 .burger-menu__link
 	width: 100%
-	padding: 10px 20px
 	display: block
 	line-height: 18px
 	text-transform: uppercase
+	font-size: 18px
 
-	&:hover, &:active
+	&_first-level
+		padding: 10px 20px
+
+	&_second-level
+		padding: 10px 20px 10px 40px
+
+		&:hover, &:active, &:focus
+			background: #2d2d32
+
+	&_dd
+		width: calc(100% - 30px)
+		display: inline-block
+		vertical-align: middle
+
+	&:hover, &:active, &:focus
 		color: #e1002f
-		background: #2d2d32
 
 .site-container
 	overflow: hidden
@@ -69,7 +91,6 @@ body
 .container
 	display: block
 	font-size: 0
-	background: #000
 
 	&_header
 		padding: 5px 0
@@ -146,8 +167,13 @@ body
 	display: inline-block
 	font-size: 0
 
+	&:hover
+		.logo-b__img
+			transform: scale(1.1)
+
 .logo-b__img
 	font-size: 0
+	+trans()
 
 .menu
 	color: #fff
@@ -181,6 +207,10 @@ body
 	position: relative
 	text-transform: uppercase
 	font-size: 14px
+	font-weight: 600
+
+	&:hover, &:active, &:focus
+		font-weight: 600
 
 .arrow-down
 	padding-right: 15px
@@ -229,53 +259,6 @@ body
 		right: 0
 		+rotate(45)
 		+trans()
-
-.btn-burger-menu
-	width: 34px
-	height: 34px
-	padding-top: 10px
-	display: none
-	font-size: 0
-	cursor: pointer
-
-.btn-close-wrap
-	width: 100%
-	padding: 15px 0
-	text-align: right
-
-.btn-close
-	width: 24px
-	height: 24px
-	margin-right: 10px
-	display: inline-block
-	font-size: 0
-	cursor: pointer
-
-.burger-line-horizontal
-	width: 100%
-	height: 5px
-	margin-bottom: 6px
-	background: #fff
-	display: inline-block
-	font-size: 0
-
-.burger-line-rotate-1
-	width: 100%
-	height: 4px
-	margin-top: 4px
-	background: #e1002f
-	display: inline-block
-	font-size: 0
-	transform: rotate(45deg) translate(6px, 6px)
-
-.burger-line-rotate-2
-	width: 100%
-	height: 4px
-	margin-top: 4px
-	background: #e1002f
-	display: inline-block
-	font-size: 0
-	+rotate(-45)
 
 .banner-b
 	width: 100%
@@ -638,21 +621,28 @@ body
 
 .chef-b
 	padding: 130px 0 110px 0
-	background: #f8f9f0
 
 .chef-b__container
 	font-size: 0
 
 .chef-b__left-b
 	width: 50%
+	padding-right: 10%
 	display: inline-block
 	font-size: 15px
+
+.chef-b__img
+	width: 100%
+	height: auto
 
 .chef-b__right-b
 	width: 50%
 	display: inline-block
 	vertical-align: top
 	font-size: 15px
+
+.chef-b__text
+	padding-right: 160px
 
 .interior-b
 	width: 100%
@@ -683,22 +673,95 @@ body
 		opacity: 0.5
 		content: ""
 
-
-
-
-
-
-
 .footer
 	width: 100%
 	padding: 60px 0 0 0
 	background: #0f0f0f
 
 .copyright-b
-	width: 85%
+	width: calc(100% - 145px)
 	display: inline-block
 	color: rgb(123,123,122)
 	font-size: 13px
+
+.way-b
+	padding: 15px 0 10px 0
+
+.way-b__list
+	font-size: 13px
+	line-height: 1.5em
+
+.way-b__item
+	margin-bottom: 5px
+	padding-right: 45px
+	display: inline-block
+	position: relative
+	color: #bdbdbd
+
+	&:after
+		display: inline
+		position: absolute
+		top: 50%
+		right: 20px
+		transform: translateY(-50%)
+		content: "/"
+
+	&:last-child
+		padding-right: 0
+
+		&:after
+			display: none
+
+.way-b__link
+	color: #000
+	+trans()
+
+	&:hover, &:active, &:focus
+		color: #e1002f
+
+.contacts-data-b
+	padding: 65px 0
+
+.contacts-data-b__int-b
+	width: 50%
+	padding-right: 10px
+	display: inline-block
+	vertical-align: top
+
+	&_left
+		padding-right: 10px
+
+	&_right
+		padding-left: 10px
+
+.feedback-b
+	padding: 95px 0 60px 0
+
+.feedback-b__int-b
+	padding-right: 10px
+	display: inline-block
+	vertical-align: top
+
+	&_left
+		width: 35%
+		padding-right: 10px
+
+	&_right
+		width: 65%
+		padding-left: 10px
+
+.feedback-b__row
+	margin: 0 -10px
+	font-size: 0
+
+.feedback-b__column
+	width: 33.33%
+	padding: 0 10px
+	display: inline-block
+
+
+
+
 
 .mb-10
 	margin-bottom: 10px
@@ -718,8 +781,11 @@ body
 .mb-70
 	margin-bottom: 70px
 
-.pr-160
-	padding-right: 160px
+.black
+	background: #000
+
+.beige
+	background: #f8f9f0
 
 .text-center
 	text-align: center
@@ -784,6 +850,12 @@ body
 	font-size: 15px
 	line-height: 1.75
 
+.a-content
+	+trans()
+
+	&:hover, &:active, &:focus
+		border-bottom: 1px solid #e1002f
+
 .quotes
 	padding-top: 75px
 	position: relative
@@ -809,7 +881,7 @@ body
 		content: ""
 
 .btn
-	width: 195px
+	padding: 0 15px
 	display: inline-block
 	line-height: 50px
 	text-align: center
@@ -818,23 +890,29 @@ body
 	+trans()
 
 	&_red
+		min-width: 195px
 		-webkit-border-radius: 5px
 		-moz-border-radius: 5px
 		border-radius: 5px
-		background: rgb(202,0,24)
+		background: #e1002f
+		font-size: 16px
+		font-weight: 600
 
-		&:hover
+		&:hover, &:focus
 			background: rgb(252,0,24)
+			font-weight: 600
 
 		&:active
 			background: rgb(152,0,24)
+			font-weight: 600
 
 	&_red-small
+		width: 120px
+		line-height: 30px
+		padding: 0 10px
 		-webkit-border-radius: 3px
 		-moz-border-radius: 3px
 		border-radius: 3px
-		width: 120px
-		line-height: 30px
 		background: #e1002f
 		position: absolute
 		top: 30px
@@ -848,17 +926,168 @@ body
 			background: #000
 
 	&_red-transparent
+		width: 195px
 		border: 2px solid #e1002f
 		-webkit-border-radius: 5px
 		-moz-border-radius: 5px
 		border-radius: 5px
+		font-weight: 600
 
-		&:hover
+		&:hover, &:focus
 			border-color: rgb(252,0,24)
 			background: rgb(252,0,24)
+			font-weight: 600
 
 		&:active
 			border-color: rgb(152,0,24)
 			background: rgb(152,0,24)
+			font-weight: 600
+
+.btn-up
+	width: 60px
+	height: 60px
+	-webkit-border-radius: 10px
+	-moz-border-radius: 10px
+	border-radius: 10px
+	background: #2d2d32
+	position: fixed
+	bottom: 80px
+	right: 20px
+	z-index: 20
+	opacity: 0.7
+	cursor: pointer
+	+trans()
+
+	&:hover
+		opacity: 1
+
+		&:before
+			border-color: #e1002f
+
+	&:before
+
+		position: absolute
+
+		width: 10px
+		height: 10px
+		border-right: 3px solid #fff
+		border-bottom: 3px solid #fff
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -40%) rotate(225deg)
+		content: ""
+		+trans()
+
+.btn-burger-menu
+	width: 34px
+	height: 27px
+	margin-top: 10px
+	display: none
+	font-size: 0
+	cursor: pointer
+
+.btn-close-wrap
+	width: 100%
+	padding: 15px 0
+	text-align: right
+
+.btn-close
+	width: 27px
+	height: 27px
+	margin-right: 10px
+	display: inline-block
+	font-size: 0
+	cursor: pointer
+
+	&:hover, &:active, &:focus
+		.line-rotate-cross
+			background: #e1002f
+
+.btn-explode-wrap
+	width: 14px
+	height: 14px
+	margin-right: 16px
+	display: inline-block
+	vertical-align: middle
+	position: relative
+
+.btn-explode
+	width: 14px
+	height: 14px
+	display: block
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	font-size: 0
+	cursor: pointer
+
+	&:hover, &:active, &:focus
+		.line-plus
+			background: #e1002f
+
+.burger-line-horizontal
+	width: 100%
+	height: 5px
+	margin-bottom: 6px
+	background: #fff
+	display: inline-block
+	font-size: 0
+
+.line-rotate-cross
+	width: 100%
+	height: 4px
+	margin-top: 4px
+	background: #fff
+	display: inline-block
+	font-size: 0
+
+	&_1
+		transform: rotate(45deg) translate(6px, 6px)
+
+	&_2
+		+rotate(-45)
+
+.line-plus
+	width: 100%
+	height: 4px
+	background: #fff
+	display: inline-block
+	position: absolute
+	top: 50%
+	left: 50%
+	font-size: 0
+
+	&_vertical
+		transform: translate(-50%, -50%)
+
+	&_horizontal
+		transform: rotate(90deg) translate(-2px, 7px)
+
+.entry-field
+	width: 100%
+	padding: 0 20px
+	margin-bottom: 20px
+	height: 50px
+	font-size: 16px
+
+	&:focus
+		box-shadow: 0 0 10px #e0e0e8
+
+.textarea
+	width: 100%
+	max-width: 100%
+	height: 100px
+	padding: 20px
+	margin-bottom: 20px
+	border: none
+	font-size: 16px
+	font-family: Sans-serif
+
+	&:focus
+		box-shadow: 0 0 10px #e0e0e8
+
+.visible
+	display: block
 
 @import "style-adaptive"

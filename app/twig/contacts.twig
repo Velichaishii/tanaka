@@ -1,0 +1,81 @@
+{% extends "layouts/app.twig" %}
+
+{% block content %}
+
+    <section class="way-b">
+        <div class="content-limiter">
+            <ul class="way-b__list">
+                <li class="way-b__item">
+                    <a class="way-b__link" href="#">Home</a>
+                </li>
+                <li class="way-b__item">
+                    Contacts
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="contacts-data-b">
+        <div class="content-limiter">
+            <div class="container">
+                <div class="contacts-data-b__int-b contacts-data-b__int-b_left">
+                    <h2 class="h2-content mb-15">Contact us</h2>
+                    <p class="p-content mb-25">
+                        44 Canal Center Plaza #200,<br>Washington, DC 22314, USA
+                    </p>
+                    <p class="p-content mb-25">
+                        TEL: <a class="a-content text-red" href="tel:1.555.836.6767">1.555.836.6767</a><br>
+                        <a class="a-content text-red" href="mailto:tanaka@demolink.org">tanaka@demolink.org</a>
+                    </p>
+                    <p class="p-content mb-25">
+                        Want to join the team?<br>
+                        <a class="a-content text-red" href="#">Apply today</a>
+                    </p>
+                </div>
+                <div class="contacts-data-b__int-b contacts-data-b__int-b_right">
+                    <h2 class="h2-content mb-15">Opening hours</h2>
+                    <p class="p-content mb-25">
+                        Mo-Fr 11:00-00:00<br>
+                        Sa-Su 15:00-00:00
+                    </p>
+                    <p class="p-content mb-25">
+                        Call us at:<br>
+                        555.329.0632
+                    </p>
+                    <div>
+                        <button class="btn btn_red btn_red">Make an online reservation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="map"></section>
+    <section class="feedback-b beige">
+        <div class="content-limiter">
+            <h2 class="h2-content mb-15">Get in touch</h2>
+            <div class="container">
+                <div class="feedback-b__int-b feedback-b__int-b_left">
+                    <p class="p-content mb-25">Tanaka family Restaurant is situated at the very historical heart of Washington, DC. Our address is well known for its unique, Japanese cuisine!</p>
+                    <p class="p-content mb-25">Please contact us using the form on the page in regards to any questions you might have, or to make a booking with us.</p>
+                </div>
+                <div class="feedback-b__int-b feedback-b__int-b_right">
+                    <form>
+                        <div class="feedback-b__row">
+                            <div class="feedback-b__column">
+                                <input class="entry-field entry-field_extension" type="text" title="name" placeholder="Your name">
+                            </div>
+                            <div class="feedback-b__column">
+                                <input class="entry-field entry-field_extension" type="text" title="phone" placeholder="Phone">
+                            </div>
+                            <div class="feedback-b__column">
+                                <input class="entry-field entry-field_extension" type="text" title="e-mail" placeholder="E-mail">
+                            </div>
+                        </div>
+                        <textarea class="textarea" title="message" placeholder="Your message"></textarea>
+                        <button class="btn btn_red">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

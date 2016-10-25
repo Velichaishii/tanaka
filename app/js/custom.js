@@ -58,10 +58,26 @@ $(document).ready(function(){
 
 
 
+    $(".btn-explode").click(function(e){
+        if (($(this).closest(".burger-menu__item").hasClass("active")) || (!$(this).closest(".burger-menu__item").find(".burger-menu__list_second-level").length) ) {
+            $(this).closest(".burger-menu__item").find(".burger-menu__list_second-level").stop().slideUp(400);
+            $(this).closest(".burger-menu__item").removeClass('active');
+        } else {
+            $(this).closest(".burger-menu__item").find(".burger-menu__list_second-level").stop().slideDown(400);
+            $(this).closest(".burger-menu__item").addClass('active');
+        }
+        e.preventDefault();
+    });
+
+
+
     $('[data-type="bg_paralax"]').each(function(){
         var $bgobj = $(this);
         var pos_this = $(this).offset().top;
         $(window).scroll(function() {
+            var ww = $(window).width();
+            if (ww < 959)
+                return;
             var pos_window = $(window).scrollTop();
             if (pos_this < pos_window + 500 ) {
                 var yPos = -((pos_this - $(window).scrollTop()) / $bgobj.data('speed')); //
