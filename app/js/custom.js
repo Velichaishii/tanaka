@@ -3,9 +3,14 @@ $(document).ready(function(){
 
 
     var doc = $(document),
-        siteWrap = $('.site-wrap');
-    var siteWrapOverlay = $('.site-wrap-overlay');
-    var burgerMenuWrap = $('.burger-menu-wrap');
+        siteWrap = $(".site-wrap");
+    var siteWrapOverlay = $(".site-wrap-overlay");
+    var burgerMenuWrap = $(".burger-menu-wrap");
+    var btnUp = $(".btn-up");
+    var burgerMenuItem = $(".burger-menu__item");
+    var burgerMenuListSL = $(".burger-menu__list_second-level");
+    var burgerMenuListTL = $(".burger-menu__list_third-level");
+
 
 
     doc.click(function (e) {
@@ -25,10 +30,10 @@ $(document).ready(function(){
 
 
     $(".btn-burger-menu").click(function(){
-        if(burgerMenuWrap.hasClass('visible') === true) {
+        if(burgerMenuWrap.hasClass("visible") === true) {
             $(".popup").removeClass("visible");
             siteWrap.removeClass("active");
-            siteWrap.width('100%');
+            siteWrap.width("100%");
             siteWrapOverlay.fadeOut(400);
         } else {
             burgerMenuWrap.addClass("visible");
@@ -38,6 +43,8 @@ $(document).ready(function(){
         }
 
     });
+
+
 
     $(".btn-close").click(function(){
         $(".popup").removeClass("visible");
@@ -58,15 +65,68 @@ $(document).ready(function(){
 
 
 
+    $(".menu__item-second-level").mousemove(function(){
+        $(this).find(".menu__list-third-level").stop().fadeIn(200);
+    });
+
+    $(".menu__item-second-level").mouseout(function(){
+        $(this).find(".menu__list-third-level").stop().fadeOut(200);
+    });
+
+
+
     $(".btn-explode").click(function(e){
-        if (($(this).closest(".burger-menu__item").hasClass("active")) || (!$(this).closest(".burger-menu__item").find(".burger-menu__list_second-level").length) ) {
-            $(this).closest(".burger-menu__item").find(".burger-menu__list_second-level").stop().slideUp(400);
-            $(this).closest(".burger-menu__item").removeClass('active');
+        if (($(this).closest(burgerMenuItem).hasClass("active")) || (!$(this).closest(burgerMenuItem).find(burgerMenuListSL).length) ) {
+            $(this).closest(burgerMenuItem).find(burgerMenuListSL).stop().slideUp(400);
+            $(this).closest(burgerMenuItem).removeClass('active');
         } else {
-            $(this).closest(".burger-menu__item").find(".burger-menu__list_second-level").stop().slideDown(400);
-            $(this).closest(".burger-menu__item").addClass('active');
+            $(this).closest(burgerMenuItem).find(burgerMenuListSL).stop().slideDown(400);
+            $(this).closest(burgerMenuItem).addClass('active');
         }
         e.preventDefault();
+    });
+
+
+
+    $(".btn-explode").click(function(e){
+        if (($(this).closest(burgerMenuItem).hasClass("active")) || (!$(this).closest(burgerMenuItem).find(burgerMenuListTL).length) ) {
+            $(this).closest(burgerMenuItem).find(burgerMenuListTL).stop().slideUp(400);
+            $(this).closest(burgerMenuItem).removeClass('active');
+        } else {
+            $(this).closest(burgerMenuItem).find(burgerMenuListTL).stop().slideDown(400);
+            $(this).closest(burgerMenuItem).addClass('active');
+        }
+        e.preventDefault();
+    });
+
+
+
+    $(document).scroll(function() {
+        if ($(window).scrollTop() > 500) {
+            btnUp.fadeIn(400);
+            btnUp.addClass("btn-up-visible");
+        }
+        else {
+            btnUp.fadeOut(400);
+            btnUp.removeClass("btn-up-visible");
+        }
+    });
+
+
+
+    $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 500);
+                    return false;
+                }
+            }
+        });
     });
 
 

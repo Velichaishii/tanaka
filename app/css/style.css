@@ -119,12 +119,12 @@ body {
 .burger-menu__list_second-level {
   display: none;
 }
-
-.burger-menu__row {
-  font-size: 0;
+.burger-menu__list_third-level {
+  display: none;
 }
-.burger-menu__row:hover, .burger-menu__row:active, .burger-menu__row:focus {
-  background: #2d2d32;
+
+.burger-menu__item {
+  position: relative;
 }
 
 .burger-menu__link {
@@ -132,7 +132,7 @@ body {
   display: block;
   line-height: 18px;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 14px;
 }
 .burger-menu__link_first-level {
   padding: 10px 20px;
@@ -143,12 +143,14 @@ body {
 .burger-menu__link_second-level:hover, .burger-menu__link_second-level:active, .burger-menu__link_second-level:focus {
   background: #2d2d32;
 }
+.burger-menu__link_third-level {
+  padding: 10px 20px 10px 60px;
+}
 .burger-menu__link_dd {
-  width: calc(100% - 30px);
-  display: inline-block;
-  vertical-align: middle;
+  padding-right: 50px;
 }
 .burger-menu__link:hover, .burger-menu__link:active, .burger-menu__link:focus {
+  background: #2d2d32;
   color: #e1002f;
 }
 
@@ -381,46 +383,64 @@ body {
   font-size: 14px;
 }
 
+.menu__item-second-level {
+  position: relative;
+}
+.menu__item-second-level:hover .menu__link_second-level {
+  color: #e1002f;
+}
+.menu__item-second-level:hover .arrow-right:after {
+  border-color: #e1002f;
+}
+
 .menu__link_second-level {
   padding: 15px 50px 15px 30px;
   display: block;
   position: relative;
 }
-.menu__link_second-level:hover {
-  color: #e1002f;
-}
 
-.arrow-right {
-  padding-right: 15px;
-}
-.arrow-right:before {
+.arrow-right:after {
   content: "";
   width: 7px;
   height: 7px;
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
   position: absolute;
-  top: 20%;
-  right: 0;
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand');
-  zoom: 1;
+  top: 45%;
+  right: 25px;
+  transform: rotate(-45deg);
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
 
-.banner-b {
+.menu__list-third-level {
+  min-width: 240px;
+  background: #242429;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+
+.menu__link_third-level {
+  padding: 15px 50px 15px 30px;
+  display: block;
+  position: relative;
+}
+.menu__link_third-level:hover {
+  color: #e1002f;
+}
+
+.banner-main-b {
   width: 100%;
   height: 800px;
   position: relative;
 }
-.banner-b::before {
+.banner-main-b::before {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
@@ -430,7 +450,7 @@ body {
   content: "";
 }
 
-.banner-b__bg {
+.banner-main-b__bg {
   width: 100%;
   height: 800px;
   background: url("../img/banner.jpg") no-repeat fixed;
@@ -441,7 +461,7 @@ body {
   z-index: -10;
 }
 
-.banner-b__content {
+.banner-main-b__content {
   width: 100%;
   height: 800px;
   display: flex;
@@ -452,7 +472,7 @@ body {
   color: #fff;
 }
 
-.p-banner-b {
+.p-banner-main-b {
   font-size: 22px;
   font-weight: 400;
   line-height: 36px;
@@ -531,11 +551,6 @@ body {
   font-size: 13px;
 }
 
-.h5-panel {
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
 .stars-b {
   margin-bottom: 20px;
 }
@@ -556,6 +571,7 @@ body {
   display: inline-block;
   position: relative;
   text-align: center;
+  overflow: hidden;
 }
 .showcase-b__link::before {
   width: 0;
@@ -607,6 +623,9 @@ body {
   left: 50%;
   right: 50%;
 }
+.showcase-b__link:hover .showcase-b__bg-img {
+  transform: scale(1.1);
+}
 
 .showcase-b__content-wrap {
   width: 100%;
@@ -625,6 +644,10 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 .showcase-b__bg-img:before {
   content: "";
@@ -989,12 +1012,71 @@ body {
   display: inline-block;
 }
 
+.banner-b {
+  width: 100%;
+  height: 770px;
+  padding: 120px 0;
+  background: url("../img/chef-cook.jpg") no-repeat center, center;
+  background-size: cover;
+  display: block;
+}
+
+.banner-b__text-box {
+  width: 40%;
+  display: inline-block;
+  color: #fff;
+}
+
+.services-b {
+  padding-top: 95px;
+}
+
+.services-b__list {
+  font-size: 0;
+}
+
+.services-b__item {
+  width: 33.33%;
+  padding: 0 15px;
+  margin-bottom: 95px;
+  display: inline-block;
+}
+.services-b__item:hover .services-b__img {
+  transform: scale(1.1);
+}
+
+.services-b__link-img {
+  display: inline-block;
+}
+
+.services-b__img {
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.services-b__link {
+  display: block;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.services-b__link:hover {
+  color: #e1002f;
+}
+
 .mb-10 {
   margin-bottom: 10px;
 }
 
 .mb-15 {
   margin-bottom: 15px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
 }
 
 .mb-25 {
@@ -1094,7 +1176,7 @@ body {
 }
 
 .h5-content {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -1208,6 +1290,7 @@ body {
 .btn-up {
   width: 60px;
   height: 60px;
+  display: none;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -1216,7 +1299,7 @@ body {
   bottom: 80px;
   right: 20px;
   z-index: 20;
-  opacity: 0.7;
+  opacity: 0;
   cursor: pointer;
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
@@ -1243,6 +1326,10 @@ body {
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
+}
+
+.btn-up-visible {
+  opacity: 0.7;
 }
 
 .btn-burger-menu {
@@ -1273,12 +1360,18 @@ body {
 }
 
 .btn-explode-wrap {
-  width: 14px;
-  height: 14px;
-  margin-right: 16px;
+  width: 38px;
+  height: 38px;
+  margin-right: 5px;
   display: inline-block;
   vertical-align: middle;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btn-explode-wrap:hover + a {
+  background: #2d2d32;
+  color: #e1002f;
 }
 
 .btn-explode {

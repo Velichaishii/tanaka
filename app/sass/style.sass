@@ -26,18 +26,18 @@ body
 	&_second-level
 		display: none
 
-.burger-menu__row
-	font-size: 0
+	&_third-level
+		display: none
 
-	&:hover, &:active, &:focus
-		background: #2d2d32
+.burger-menu__item
+	position: relative
 
 .burger-menu__link
 	width: 100%
 	display: block
 	line-height: 18px
 	text-transform: uppercase
-	font-size: 18px
+	font-size: 14px
 
 	&_first-level
 		padding: 10px 20px
@@ -48,12 +48,14 @@ body
 		&:hover, &:active, &:focus
 			background: #2d2d32
 
+	&_third-level
+		padding: 10px 20px 10px 60px
+
 	&_dd
-		width: calc(100% - 30px)
-		display: inline-block
-		vertical-align: middle
+		padding-right: 50px
 
 	&:hover, &:active, &:focus
+		background: #2d2d32
 		color: #e1002f
 
 .site-container
@@ -237,7 +239,46 @@ body
 	text-align: left
 	font-size: 14px
 
+.menu__item-second-level
+	position: relative
+
+	&:hover
+		.menu__link_second-level
+			color: #e1002f
+
+		.arrow-right
+			&:after
+				border-color: #e1002f
+
 .menu__link_second-level
+	padding: 15px 50px 15px 30px
+	display: block
+	position: relative
+
+.arrow-right
+	&:after
+		content: ''
+		width: 7px
+		height: 7px
+		border-right: 2px solid #fff
+		border-bottom: 2px solid #fff
+		position: absolute
+		top: 45%
+		right: 25px
+		transform: rotate(-45deg)
+		+trans()
+
+.menu__list-third-level
+	min-width: 240px
+	background: rgb(36,36,41)
+	display: none
+	position: absolute
+	top: 0
+	left: 100%
+	text-align: left
+	font-size: 14px
+
+.menu__link_third-level
 	padding: 15px 50px 15px 30px
 	display: block
 	position: relative
@@ -245,22 +286,7 @@ body
 	&:hover
 		color: #e1002f
 
-.arrow-right
-	padding-right: 15px
-
-	&:before
-		content: ''
-		width: 7px
-		height: 7px
-		border-right: 2px solid #fff
-		border-bottom: 2px solid #fff
-		position: absolute
-		top: 20%
-		right: 0
-		+rotate(45)
-		+trans()
-
-.banner-b
+.banner-main-b
 	width: 100%
 	height: 800px
 	position: relative
@@ -274,7 +300,7 @@ body
 		left: 0
 		content: ""
 
-.banner-b__bg
+.banner-main-b__bg
 	width: 100%
 	height: 800px
 	background: url('../img/banner.jpg') no-repeat fixed
@@ -284,7 +310,7 @@ body
 	left: 0
 	z-index: -10
 
-.banner-b__content
+.banner-main-b__content
 	width: 100%
 	height: 800px
 	display: flex
@@ -294,7 +320,7 @@ body
 	text-align: center
 	color: #fff
 
-.p-banner-b
+.p-banner-main-b
 	font-size: 22px
 	font-weight: 400
 	line-height: 36px
@@ -361,10 +387,6 @@ body
 	vertical-align: top
 	font-size: 13px
 
-.h5-panel
-	margin-bottom: 15px
-	font-size: 18px
-
 .stars-b
 	margin-bottom: 20px
 
@@ -382,6 +404,7 @@ body
 	display: inline-block
 	position: relative
 	text-align: center
+	overflow: hidden
 
 	&::before
 		width: 0
@@ -427,6 +450,10 @@ body
 		left: 50%
 		right: 50%
 
+	&:hover
+		.showcase-b__bg-img
+			transform: scale(1.1)
+
 .showcase-b__content-wrap
 	width: 100%
 	position: relative
@@ -443,6 +470,7 @@ body
 	bottom: 0
 	left: 0
 	right: 0
+	+trans()
 
 	&:before
 		content: ""
@@ -759,6 +787,49 @@ body
 	padding: 0 10px
 	display: inline-block
 
+.banner-b
+	width: 100%
+	height: 770px
+	padding: 120px 0
+	background: url('../img/chef-cook.jpg') no-repeat center, center
+	background-size: cover
+	display: block
+
+.banner-b__text-box
+	width: 40%
+	display: inline-block
+	color: #fff
+
+.services-b
+	padding-top: 95px
+
+.services-b__list
+	font-size: 0
+
+.services-b__item
+	width: 33.33%
+	padding: 0 15px
+	margin-bottom: 95px
+	display: inline-block
+
+	&:hover
+		.services-b__img
+			transform: scale(1.1)
+
+.services-b__link-img
+	display: inline-block
+
+.services-b__img
+	+trans()
+
+.services-b__link
+	display: block
+	+trans()
+
+	&:hover
+		color: #e1002f
+
+
 
 
 
@@ -768,6 +839,9 @@ body
 
 .mb-15
 	margin-bottom: 15px
+
+.mb-20
+	margin-bottom: 20px
 
 .mb-25
 	margin-bottom: 25px
@@ -843,7 +917,7 @@ body
 	font-weight: 600
 
 .h5-content
-	font-size: 19px
+	font-size: 18px
 	font-weight: 400
 
 .p-content
@@ -946,6 +1020,7 @@ body
 .btn-up
 	width: 60px
 	height: 60px
+	display: none
 	-webkit-border-radius: 10px
 	-moz-border-radius: 10px
 	border-radius: 10px
@@ -954,7 +1029,7 @@ body
 	bottom: 80px
 	right: 20px
 	z-index: 20
-	opacity: 0.7
+	opacity: 0
 	cursor: pointer
 	+trans()
 
@@ -977,6 +1052,9 @@ body
 		transform: translate(-50%, -40%) rotate(225deg)
 		content: ""
 		+trans()
+
+.btn-up-visible
+	opacity: 0.7
 
 .btn-burger-menu
 	width: 34px
@@ -1004,12 +1082,18 @@ body
 			background: #e1002f
 
 .btn-explode-wrap
-	width: 14px
-	height: 14px
-	margin-right: 16px
+	width: 38px
+	height: 38px
+	margin-right: 5px
 	display: inline-block
 	vertical-align: middle
-	position: relative
+	position: absolute
+	top: 0
+	right: 0
+
+	&:hover + a
+		background: #2d2d32
+		color: #e1002f
 
 .btn-explode
 	width: 14px
